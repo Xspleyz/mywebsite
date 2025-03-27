@@ -1,0 +1,67 @@
+
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <link rel="stylesheet" href="login.css">
+  <title>XspleyzWeb</title>
+</head>
+
+<body>
+  <section>
+    <div class="form-box">
+      <div class="form-value">
+        <form id="loginForm">
+          <h2>XspleyzWeb</h2>
+          <br>
+          <h6>Login</h6>
+          <div class="inputbox">
+            <input type="text" id="username" required>
+            <label for="username">Username</label>
+          </div>
+          <div class="inputbox">
+            <input type="password" id="password" required>
+            <label for="password">Password</label>
+          </div>
+          <div class="forget">
+            <label>
+              <p>Forget <a href="#">Password</a></p>
+            </label>
+          </div>
+          <button type="submit">Log in</button>
+          <div class="register">
+            <p>Don't have an account? <a href="#">Register</a></p>
+          </div>
+          <div id="message"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // Data pengguna yang valid
+    const validUsername = "xspleyz";
+    const validPassword = "laroza(06)";
+
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const message = document.getElementById("message");
+
+        if (username === validUsername && password === validPassword) {
+            message.style.color = "green";
+            message.textContent = "Login berhasil!";
+            window.location.href = "https://sites.google.com/view/xspleyz/beranda";
+        } else {
+            message.style.color = "red";
+            message.textContent = "Username atau password salah!";
+        }
+    });
+  </script>
+</body>
+
+</html>
